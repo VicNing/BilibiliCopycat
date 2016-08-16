@@ -14,6 +14,5 @@ public class MyApplication extends Application {
         super.onCreate();
         LeakCanary.install(this);
         Fresco.initialize(this);
-        //lol
     }
 }
