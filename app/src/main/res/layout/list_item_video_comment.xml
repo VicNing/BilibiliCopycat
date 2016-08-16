@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        fresco:placeholderImage="@color/colorWhite"
+        fresco:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/tv_author_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/iv_avatar"
+        android:text="因为我和你"
+        android:textColor="@color/textBlack"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@id/tv_author_name" />
+
+    <TextView
+        android:id="@+id/tv_floor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_author_name"
+        android:layout_below="@id/tv_author_name"
+        android:layout_marginTop="4dp"
+        android:text="#36"
+        android:textColor="@color/_text__gray_light"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tv_post_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_floor"
+        android:layout_marginStart="8dp"
+        android:layout_toEndOf="@id/tv_floor"
+        android:text="2016-08-12 17:58"
+        android:textColor="@color/_text__gray_light"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/iv_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_floor"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_lv3" />
+
+    <TextView
+        android:id="@+id/tv_comment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@id/tv_author_name"
+        android:layout_below="@id/tv_floor"
+        android:layout_marginTop="4dp"
+        android:text="找打一个野生提升是这很不容易的"
+        android:textColor="@color/textBlack"
+        android:textSize="13sp" />
+
+</RelativeLayout>

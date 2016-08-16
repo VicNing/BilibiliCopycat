@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fffb7299</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorWindowBackground">#FFEAEAEA</color>
+    <color name="colorTransWhite">#99FFFFFF</color>
+    <color name="colorBlack">#FF000000</color>
+    <color name="transGray">#99AAAAAA</color>
+    <color name="colorTextGray">#FF797979</color>
+    <color name="textBlack">#CC000000</color>
+    <!--Text Colors-->
+    <color name="textWhite">#FFFFFF</color>
+
+    <color name="textTranslucentWhite">#99ffffff</color>
+    <color name="_text__gray">#ff797979</color>
+    <color name="_text__gray_dark">#ff616161</color>
+    <color name="_text__gray_light">#ffbababa</color>
+    <color name="_text__gray_translucent_light">#abbababa</color>
+    <color name="_text__gray_very_dark">#ff525252</color>
+    <color name="_text__pink">#ffd665a0</color>
+    <color name="_text__white">#ffffffff</color>
+
+</resources>
