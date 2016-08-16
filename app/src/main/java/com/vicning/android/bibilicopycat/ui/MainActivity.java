@@ -1,20 +1,21 @@
 package com.vicning.android.bibilicopycat.ui;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.imagepipeline.core.ImagePipeline;
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.ui.adapters.MainPagerAdapter;
-import com.vicning.android.bibilicopycat.utils.LogUtil;
+import com.vicning.android.bibilicopycat.ui.fragments.SearchDialogFragment;
 
-import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -49,6 +50,29 @@ public class MainActivity extends AppCompatActivity {
         imagePipeline.clearMemoryCaches();
         Log.e("onStop", "onStop: clear img cache...");
         imagePipeline.clearCaches();*/
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.search:
+                showSearchDialog();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private void showSearchDialog() {
+        FragmentManager mFM = getSupportFragmentManager();
+        SearchDialogFragment searchDialogFragment = new SearchDialogFragment();
+        searchDialogFragment.show(mFM,"fragment_search");
     }
 
     private void initView() {
