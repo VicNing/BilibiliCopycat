@@ -3,6 +3,8 @@ package com.vicning.android.bibilicopycat.ui;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.ColorUtils;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set the activitie's background color
+        getWindow().getDecorView().setBackgroundColor(
+                ContextCompat.getColor(this, R.color.colorWindowBackground));
 
         ButterKnife.bind(this);
 

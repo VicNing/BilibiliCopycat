@@ -69,12 +69,14 @@ public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
-            if (isHotReply) {
-                if (i == hotReplys - 1 || i == hotReplys) {
-                    return;
-                }
-            }
             final View child = parent.getChildAt(i);
+
+            //determine if at position hot divider
+            int position = parent.getChildAdapterPosition(child);
+            if (position == 2 || position == 3) {
+                continue;
+            }
+
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();
             final int top = child.getBottom() + params.bottomMargin;

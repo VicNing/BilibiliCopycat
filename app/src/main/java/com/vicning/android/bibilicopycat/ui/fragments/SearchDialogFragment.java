@@ -1,9 +1,11 @@
 package com.vicning.android.bibilicopycat.ui.fragments;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -52,19 +55,26 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
         ibBack.setOnClickListener(this);
         ibSearch.setOnClickListener(this);
         ibClear.setOnClickListener(this);
+        etSearch.requestFocus();
     }
 
     @Override
     public void onResume() {
         //Resizing dialog to 95% of screen width.
-        Window window = getDialog().getWindow();
-        Point size = new Point();
-        Display display = window.getWindowManager().getDefaultDisplay();
-        display.getSize(size);
-        window.setLayout((int) (size.x * 0.95), WindowManager.LayoutParams.WRAP_CONTENT);
+        //need to post it because
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Window window = getDialog().getWindow();
+                Point size = new Point();
+                Display display = window.getWindowManager().getDefaultDisplay();
+                display.getSize(size);
+                window.setLayout((int) (size.x * 0.95), WindowManager.LayoutParams.WRAP_CONTENT);
+                window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+            }
+        });
 
         super.onResume();
-
     }
 
     @NonNull
@@ -75,6 +85,7 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
         Window window = dialog.getWindow();
         window.requestFeature(Window.FEATURE_NO_TITLE);
         window.setGravity(Gravity.TOP);
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
         return dialog;
     }
 
