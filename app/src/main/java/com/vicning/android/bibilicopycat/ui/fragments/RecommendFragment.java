@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.model.entity.Recommends;
 import com.vicning.android.bibilicopycat.network.AppServices;
@@ -53,6 +54,16 @@ public class RecommendFragment extends Fragment {
 
     private void initView() {
 
+        rvBase.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    Fresco.getImagePipeline().resume();
+                } else {
+                    Fresco.getImagePipeline().pause();
+                }
+            }
+        });
         recommendPageAdapter = new RecommendPageAdapter(getContext());
         rvBase.setAdapter(recommendPageAdapter);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
