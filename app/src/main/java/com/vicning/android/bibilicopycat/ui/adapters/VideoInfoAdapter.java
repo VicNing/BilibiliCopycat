@@ -60,7 +60,6 @@ public class VideoInfoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
                 AuthorInfoHolder authorInfoHolder = (AuthorInfoHolder) holder;
                 authorInfoHolder.ivAvatar.setImageURI(videoInfo.face);
                 authorInfoHolder.tvName.setText(videoInfo.author);
-                Log.e("POSTTIME", "onBindViewHolder: " + videoInfo.created_at );
                 authorInfoHolder.tvPostTime.setText(videoInfo.created_at);
             }
         }

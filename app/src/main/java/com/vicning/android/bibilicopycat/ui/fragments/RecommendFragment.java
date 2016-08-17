@@ -56,14 +56,17 @@ public class RecommendFragment extends Fragment {
         recommendPageAdapter = new RecommendPageAdapter(getContext());
         rvBase.setAdapter(recommendPageAdapter);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
-        gridLayoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
+        GridLayoutManager.SpanSizeLookup spanSizeLookup = new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
                 return recommendPageAdapter.getSpanSize(position);
             }
-        });
+        };
+        spanSizeLookup.setSpanIndexCacheEnabled(true);
+        gridLayoutManager.setSpanSizeLookup(spanSizeLookup);
         rvBase.setLayoutManager(gridLayoutManager);
-        rvBase.addItemDecoration(new SpacesItemDecoration(DensityUtil.dip2px(getContext(), 10)));
+        rvBase.addItemDecoration(new SpacesItemDecoration(DensityUtil.dip2px(getContext(), 10)
+                , spanSizeLookup));
 
         initRequest();
     }
