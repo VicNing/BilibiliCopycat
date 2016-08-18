@@ -32,7 +32,7 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
                 break;
 
             case RecommendPageAdapter.TYPE_SECTION_HEADER:
-                outRect.set(mSpace, mSpace, mSpace, mSpace);
+                outRect.set(mSpace, 0, mSpace, mSpace);
                 break;
 
             case RecommendPageAdapter.TYPE_SECTION_FOOTER:

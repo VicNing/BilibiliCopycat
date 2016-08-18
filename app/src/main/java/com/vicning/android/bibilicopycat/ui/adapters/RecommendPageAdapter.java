@@ -103,6 +103,15 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
                     longCardHolder.tvCardDesc.setVisibility(View.VISIBLE);
                     longCardHolder.tvCardDesc.setText(body.title);
                 }
+            } else if (holder instanceof SectionFooterHolder) {
+                SectionFooterHolder footerHolder = (SectionFooterHolder) holder;
+                RecoBean recoBean = dataList.get(position - 1);
+                if (recoBean.type.equals("weblink") || recoBean.type.equals("activity")) {
+                    footerHolder.rlFooter.setVisibility(View.GONE);
+                } else {
+                    footerHolder.rlFooter.setVisibility(View.VISIBLE);
+                }
+
             }
         }
     }

@@ -54,6 +54,7 @@ public class RecommendFragment extends Fragment {
 
     private void initView() {
 
+        //当RecyclerView滚动时，暂停加载图片
         rvBase.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
