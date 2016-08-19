@@ -2,7 +2,6 @@ package com.vicning.android.bibilicopycat.ui.adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,8 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vicning.android.bibilicopycat.R;
-import com.vicning.android.bibilicopycat.common.SectionHeaderMap;
-import com.vicning.android.bibilicopycat.model.entity.RecoBean;
+import com.vicning.android.bibilicopycat.model.beans.RecoBean;
 import com.vicning.android.bibilicopycat.model.entity.Recommends;
 import com.vicning.android.bibilicopycat.ui.PortraitPlayerActivity;
 import com.vicning.android.bibilicopycat.ui.holders.BannerHolder;
@@ -76,7 +74,39 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
             if (holder instanceof SectionHeaderHolder) {
                 RecoBean recoBean = dataList.get(position - 1);
                 SectionHeaderHolder sectionHeaderHolder = (SectionHeaderHolder) holder;
-                sectionHeaderHolder.tvDesc.setText(recoBean.head.title);
+                switch (recoBean.type) {
+                    case "weblink":
+                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_topic);
+                        break;
+
+                    case "bangumi_2":
+                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_group_recommend_header);
+                        break;
+
+                    case "live":
+                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_head_live);
+                        break;
+
+                    case "activity":
+                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_activity_center);
+                        break;
+
+                    default:
+                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_hot);
+                        break;
+                }
+                if (recoBean.type.equals("weblink")) {
+                    sectionHeaderHolder.tvDesc.setText("话题");
+                } else {
+                    sectionHeaderHolder.tvDesc.setText(recoBean.head.title);
+                }
+                if (recoBean.type.equals("recommend")) {
+                    sectionHeaderHolder.tvHeadLadder.setVisibility(View.VISIBLE);
+                    sectionHeaderHolder.tvHeadMore.setVisibility(View.GONE);
+                } else {
+                    sectionHeaderHolder.tvHeadLadder.setVisibility(View.GONE);
+                    sectionHeaderHolder.tvHeadMore.setVisibility(View.VISIBLE);
+                }
 
             } else if (holder instanceof StandardCardHolder) {
                 final Recommends.Body body = dataList.get(position - 1).body;
@@ -104,14 +134,6 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
                     longCardHolder.tvCardDesc.setText(body.title);
                 }
             } else if (holder instanceof SectionFooterHolder) {
-                SectionFooterHolder footerHolder = (SectionFooterHolder) holder;
-                RecoBean recoBean = dataList.get(position - 1);
-                if (recoBean.type.equals("weblink") || recoBean.type.equals("activity")) {
-                    footerHolder.rlFooter.setVisibility(View.GONE);
-                } else {
-                    footerHolder.rlFooter.setVisibility(View.VISIBLE);
-                }
-
             }
         }
     }
@@ -158,7 +180,9 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
                     dataList.add(new RecoBean(type, TYPE_STANDARD_CARD, null, body));
                 }
             }
-            dataList.add(new RecoBean(type, TYPE_SECTION_FOOTER, result.head, null));
+            if (!type.equals("weblink") && !type.equals("activity")) {
+                dataList.add(new RecoBean(type, TYPE_SECTION_FOOTER, result.head, null));
+            }
         }
     }
 }

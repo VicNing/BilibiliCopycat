@@ -3,4 +3,7 @@
     <string name="more_hot_comments">更多热门评论 >></string>
     <string name="search">search</string>
     <string name="search_hint">搜索视频、番剧、up主或av号</string>
+    <string name="search_title">相关视频(%1$d)</string>
+    <string name="search_counts">点击：%1$d 订阅：%2$d</string>
+    <string name="search_newest_ep">更新到第%1$s话</string>
 </resources>

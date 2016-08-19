@@ -11,27 +11,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/ic_header_hot" />
+        android:layout_centerVertical="true" />
 
     <TextView
         android:id="@+id/tv_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
         android:layout_toEndOf="@id/iv_icon"
-        android:padding="5dp" />
+        android:padding="4dp"
+        android:textColor="@color/textBlack"
+        android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/tv_detail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/iv_icon"
-        android:layout_centerVertical="true"
+        android:id="@+id/tv_head_ladder"
+        style="@style/StyleSectionHeaderTextView"
+        android:background="@drawable/shape_round_corner_yellow_rect"
         android:drawablePadding="4dp"
         android:drawableStart="@drawable/ic_header_indicator_rank"
-        android:gravity="center"
         android:text="排行榜" />
+
+    <TextView
+        android:id="@+id/tv_head_more"
+        style="@style/StyleSectionHeaderTextView"
+        android:background="@drawable/shape_round_corner_gray_rect"
+        android:padding="4dp"
+        android:text="进去看看" />
 
 
 </RelativeLayout>

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.ui.PortraitPlayerActivity;
 
+import org.w3c.dom.Text;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -23,8 +25,10 @@ public class SectionHeaderHolder extends RecyclerView.ViewHolder {
     public ImageView ivIcon;
     @BindView(R.id.tv_desc)
     public TextView tvDesc;
-    @BindView(R.id.tv_detail)
-    public TextView tvDetail;
+    @BindView(R.id.tv_head_ladder)
+    public TextView tvHeadLadder;
+    @BindView(R.id.tv_head_more)
+    public TextView tvHeadMore;
 
     private Context mContext;
 

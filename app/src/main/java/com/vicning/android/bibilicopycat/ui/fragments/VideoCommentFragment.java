@@ -97,13 +97,7 @@ public class VideoCommentFragment extends Fragment {
                             adapter.onDataReceived(videoComment);
                             adapter.notifyDataSetChanged();
                         } else {
-                            int replies = videoComment.data.replies.size();
-                            if (replies != 0) {
-                                adapter.getVideoComment()
-                                        .data.replies.addAll(videoComment.data.replies);
-                                adapter.notifyItemRangeInserted(
-                                        adapter.getItemCount(), replies);
-                            }
+                            adapter.onLoadMore(videoComment);
                         }
                     }
                 }, new Action1<Throwable>() {

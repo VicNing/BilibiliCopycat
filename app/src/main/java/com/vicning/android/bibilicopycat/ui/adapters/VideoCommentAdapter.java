@@ -133,7 +133,13 @@ public class VideoCommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    public VideoComment getVideoComment() {
-        return this.videoComment;
+    public void onLoadMore(VideoComment more) {
+        if (videoComment != null) {
+            int replies = more.data.replies.size();
+            if (replies != 0) {
+                videoComment.data.replies.addAll(more.data.replies);
+                notifyItemRangeInserted(getItemCount(), replies);
+            }
+        }
     }
 }

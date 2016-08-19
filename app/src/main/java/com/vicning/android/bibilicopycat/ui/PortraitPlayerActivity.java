@@ -103,7 +103,7 @@ public class PortraitPlayerActivity extends AppCompatActivity implements View.On
 
     private static final String TAG = "LOLOL";
     //视频源切换
-    private static final int VIDEO_SOURCE = 2;
+    private static final int VIDEO_SOURCE = 0;
     private boolean isControllerDisplayed = false;
 
     @Override
@@ -138,6 +138,8 @@ public class PortraitPlayerActivity extends AppCompatActivity implements View.On
                         mediaPlayer.start();
                         danmakuView.start();
                         danmakuView.showFPS(true);
+
+                        //configure seekBar,add repeat Observer to observe video progress change
                         seekBar.setMax((int) mediaPlayer.getDuration());
                         Subscription subscribe = Observable.fromCallable(new Callable<Long>() {
                             @Override
@@ -442,15 +444,16 @@ public class PortraitPlayerActivity extends AppCompatActivity implements View.On
     public void onProgressChanged(SeekBar seekBar, final int progress, boolean fromUser) {
         if (fromUser) {
             mediaPlayer.pause();
+            danmakuView.pause();
             mediaPlayer.setOnSeekCompleteListener(new IMediaPlayer.OnSeekCompleteListener() {
                 @Override
                 public void onSeekComplete(IMediaPlayer iMediaPlayer) {
                     mediaPlayer.start();
-                    danmakuView.start(progress);
+                    danmakuView.resume();
                 }
             });
             mediaPlayer.seekTo(progress);
-            danmakuView.stop();
+            danmakuView.seekTo((long) progress);
         }
     }
 

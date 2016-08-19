@@ -3,17 +3,42 @@
     android:id="@+id/rl_footer"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <TextView
-        android:text="查看更多"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:orientation="vertical"
+    android:paddingEnd="1dp"
+    android:paddingStart="1dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/shape_round_corner_white_rect"
+        android:paddingBottom="6dp"
+        android:paddingEnd="36dp"
+        android:paddingStart="36dp"
+        android:paddingTop="6dp"
+        android:text="查看更多"
+        android:textColor="@color/textBlack"
+        android:textSize="12sp" />
+
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:drawableEnd="@drawable/ic_category_more_refresh"
-        android:text="3条新动态，点击刷新" />
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_category_more_refresh"
+        android:tint="@color/colorPrimary" />
+
+    <TextView
+        android:textColor="@color/textBlack"
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@id/iv_refresh"
+        android:paddingEnd="8dp"
+        android:paddingStart="8dp"
+        android:text="3条新动态，点击刷新"
+        android:textSize="12sp" />
+
+
 </RelativeLayout>

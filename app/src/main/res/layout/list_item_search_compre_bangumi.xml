@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:padding="6dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_cover"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        fresco:viewAspectRatio="0.75" />
+
+    <TextView
+        android:id="@+id/tv_bangumi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@+id/iv_cover"
+        android:background="@color/colorPrimary"
+        android:padding="1dp"
+        android:text="番剧"
+        android:textColor="@color/textWhite"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_bangumi"
+        android:layout_marginStart="4dp"
+        android:layout_toEndOf="@+id/tv_bangumi"
+        android:textColor="@color/textBlack" />
+
+    <TextView
+        android:id="@+id/tv_counts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@id/tv_bangumi"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/colorTextGray"
+        android:textSize="@dimen/text_size_normal" />
+
+    <TextView
+        android:id="@+id/tv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@id/tv_bangumi"
+        android:layout_below="@+id/tv_counts"
+        android:layout_marginTop="4dp"
+        android:text="全集"
+        android:textColor="@color/colorTextGray"
+        android:textSize="@dimen/text_size_normal" />
+
+</RelativeLayout>
