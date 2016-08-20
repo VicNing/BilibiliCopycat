@@ -12,9 +12,9 @@ public class VideoComment {
 
     public static class Data {
 
-        public List<Hot> hots = new ArrayList<Hot>();
+        public List<Hot> hots = new ArrayList<>();
         public Page page;
-        public List<Reply> replies = new ArrayList<Reply>();
+        public List<Reply> replies = new ArrayList<>();
     }
 
     public static class Hot {
@@ -31,7 +31,7 @@ public class VideoComment {
         public Integer parent;
         public String parent_str;
         public Integer rcount;
-        public List<Object> replies = new ArrayList<Object>();
+        public List<Object> replies = new ArrayList<>();
         public Integer root;
         public String root_str;
         public Float rpid;
@@ -62,7 +62,7 @@ public class VideoComment {
         public Integer parent;
         public String parentStr;
         public Integer rcount;
-        public List<Object> replies = new ArrayList<Object>();
+        public List<Object> replies = new ArrayList<>();
         public Integer root;
         public String rootStr;
         public Long rpid;
@@ -74,7 +74,7 @@ public class VideoComment {
     public static class Content {
 
         public String device;
-        public List<Object> members = new ArrayList<Object>();
+        public List<Object> members = new ArrayList<>();
         public String message;
         public Integer plat;
     }

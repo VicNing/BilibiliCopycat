@@ -5,14 +5,12 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.common.Secret;
-import com.vicning.android.bibilicopycat.model.beans.SearchCompreBean;
 import com.vicning.android.bibilicopycat.model.entity.SearchCompreInfo;
 import com.vicning.android.bibilicopycat.network.ApiServices;
 import com.vicning.android.bibilicopycat.network.RetrofitClients;
@@ -24,7 +22,6 @@ import com.vicning.android.bibilicopycat.utils.MD5Util;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
-import java.util.ArrayList;
 import java.util.TreeMap;
 
 import butterknife.BindView;
@@ -88,6 +85,29 @@ public class SearchCompreFragment extends Fragment {
         requestData(1);
     }
 
+    public void requestData(final int page) {
+        ApiServices apiServices = RetrofitClients.getRetrofitAPI().create(ApiServices.class);
+        apiServices.getSearchCompreInfo(genarateQueryMap(String.valueOf(page)))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Action1<SearchCompreInfo>() {
+                    @Override
+                    public void call(SearchCompreInfo searchCompreInfo) {
+                        if (page == 1) {
+                            adapter.onDataReceived(searchCompreInfo);
+                            adapter.notifyDataSetChanged();
+                        } else {
+                            adapter.onLoadMore(searchCompreInfo);
+                        }
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        throw new RuntimeException(throwable);
+                    }
+                });
+    }
+
     private TreeMap<String, String> genarateQueryMap(String page) {
         TreeMap<String, String> queryMap = new TreeMap<>();
         try {
@@ -112,26 +132,4 @@ public class SearchCompreFragment extends Fragment {
         return queryMap;
     }
 
-    public void requestData(final int page) {
-        ApiServices apiServices = RetrofitClients.getRetrofitAPI().create(ApiServices.class);
-        apiServices.getSearchCompreInfo(genarateQueryMap(String.valueOf(page)))
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Action1<SearchCompreInfo>() {
-                    @Override
-                    public void call(SearchCompreInfo searchCompreInfo) {
-                        if (page == 1) {
-                            adapter.onDataReceived(searchCompreInfo);
-                            adapter.notifyDataSetChanged();
-                        } else {
-                            adapter.onLoadMore(searchCompreInfo);
-                        }
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        throw new RuntimeException(throwable);
-                    }
-                });
-    }
 }

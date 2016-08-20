@@ -14,10 +14,10 @@ public class SearchCompreInfo {
     public PageCaches pageCaches;
     public Pageinfo pageinfo;
     public String suggest_keyword;
-    public List<Object> sel_subType = new ArrayList<Object>();
+    public List<Object> sel_subType = new ArrayList<>();
     public TopTlist top_tlist;
-    public List<SubTlist> sub_tlist = new ArrayList<SubTlist>();
-    public List<Object> sub2_tlist = new ArrayList<Object>();
+    public List<SubTlist> sub_tlist = new ArrayList<>();
+    public List<Object> sub2_tlist = new ArrayList<>();
     public Result result;
     public Cost cost;
 
@@ -54,13 +54,13 @@ public class SearchCompreInfo {
     }
 
     public static class Result {
-        public List<Video_> video = new ArrayList<Video_>();
-        public List<Object> special = new ArrayList<Object>();
-        public List<Bangumi_> bangumi = new ArrayList<Bangumi_>();
-        public List<Movie_> movie = new ArrayList<Movie_>();
-        public List<Object> tvplay = new ArrayList<Object>();
-        public List<Topic_> topic = new ArrayList<Topic_>();
-        public List<Object> upuser = new ArrayList<Object>();
+        public List<Video_> video = new ArrayList<>();
+        public List<Object> special = new ArrayList<>();
+        public List<Bangumi_> bangumi = new ArrayList<>();
+        public List<Movie_> movie = new ArrayList<>();
+        public List<Object> tvplay = new ArrayList<>();
+        public List<Topic_> topic = new ArrayList<>();
+        public List<Object> upuser = new ArrayList<>();
     }
 
     public static class Cost {
@@ -165,8 +165,8 @@ public class SearchCompreInfo {
         public Integer danmaku_count;
         public Integer total_count;
         public Integer pubdate;
-        public List<Object> eplist = new ArrayList<Object>();
-        public List<Object> bgmlist = new ArrayList<Object>();
+        public List<Object> eplist = new ArrayList<>();
+        public List<Object> bgmlist = new ArrayList<>();
         public Catlist catlist;
         public String newest_cat;
         public String newest_season;

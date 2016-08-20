@@ -72,69 +72,126 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
         if (dataList != null) {
 
             if (holder instanceof SectionHeaderHolder) {
-                RecoBean recoBean = dataList.get(position - 1);
-                SectionHeaderHolder sectionHeaderHolder = (SectionHeaderHolder) holder;
-                switch (recoBean.type) {
-                    case "weblink":
-                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_topic);
-                        break;
-
-                    case "bangumi_2":
-                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_group_recommend_header);
-                        break;
-
-                    case "live":
-                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_head_live);
-                        break;
-
-                    case "activity":
-                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_activity_center);
-                        break;
-
-                    default:
-                        sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_hot);
-                        break;
-                }
-                if (recoBean.type.equals("weblink")) {
-                    sectionHeaderHolder.tvDesc.setText("话题");
-                } else {
-                    sectionHeaderHolder.tvDesc.setText(recoBean.head.title);
-                }
-                if (recoBean.type.equals("recommend")) {
-                    sectionHeaderHolder.tvHeadLadder.setVisibility(View.VISIBLE);
-                    sectionHeaderHolder.tvHeadMore.setVisibility(View.GONE);
-                } else {
-                    sectionHeaderHolder.tvHeadLadder.setVisibility(View.GONE);
-                    sectionHeaderHolder.tvHeadMore.setVisibility(View.VISIBLE);
-                }
+                onBindSectionHeaderHolder(holder, position);
 
             } else if (holder instanceof StandardCardHolder) {
-                final Recommends.Body body = dataList.get(position - 1).body;
-                StandardCardHolder standardCardHolder = (StandardCardHolder) holder;
-                standardCardHolder.ivCardPic.setImageURI(body.cover);
-                standardCardHolder.tvCardDesc.setText(body.title);
-                standardCardHolder.tvPlayCounts.setText(body.play);
-                standardCardHolder.tvCommentCounts.setText(body.danmaku);
-                standardCardHolder.cardView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(mContext, PortraitPlayerActivity.class);
-                        intent.putExtra("aid", body.param);
-                        mContext.startActivity(intent);
-                    }
-                });
+                onBindStandardCardHolder(holder, position);
+
             } else if (holder instanceof LongCardHolder) {
-                Recommends.Body body = dataList.get(position - 1).body;
-                LongCardHolder longCardHolder = (LongCardHolder) holder;
-                longCardHolder.ivCardPic.setImageURI(body.cover);
-                if (TextUtils.isEmpty(body.title)) {
-                    longCardHolder.tvCardDesc.setVisibility(View.GONE);
-                } else {
-                    longCardHolder.tvCardDesc.setVisibility(View.VISIBLE);
-                    longCardHolder.tvCardDesc.setText(body.title);
-                }
-            } else if (holder instanceof SectionFooterHolder) {
+                onBindLongCardHolder(holder, position);
+
             }
+        }
+    }
+
+    private void onBindSectionHeaderHolder(RecyclerView.ViewHolder holder, int position) {
+        RecoBean recoBean = dataList.get(position - 1);
+        SectionHeaderHolder sectionHeaderHolder = (SectionHeaderHolder) holder;
+        switch (recoBean.head.title) {
+            case "热门焦点":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_hot);
+                break;
+
+            case "番剧推荐":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_bangumi);
+                break;
+
+            case "热门直播":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_head_live);
+                break;
+
+            case "动画区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_anim);
+                break;
+
+            case "音乐区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_music);
+                break;
+
+            case "舞蹈区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_dance);
+                break;
+
+            case "游戏区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_game);
+                break;
+
+            case "鬼畜区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_guichu);
+                break;
+
+            case "科技区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_tech);
+                break;
+
+            case "活动中心":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_activity_center);
+                break;
+
+            case "生活区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_life);
+                break;
+
+            case "时尚区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_fashion);
+                break;
+
+            case "娱乐区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_entertain);
+                break;
+
+            case "电视剧区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_soap);
+                break;
+
+            case "电影区":
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_category_movie);
+                break;
+
+            default:
+                sectionHeaderHolder.ivIcon.setImageResource(R.drawable.ic_header_topic);
+                break;
+        }
+        if (recoBean.type.equals("weblink")) {
+            sectionHeaderHolder.tvDesc.setText("话题");
+        } else {
+            sectionHeaderHolder.tvDesc.setText(recoBean.head.title);
+        }
+        if (recoBean.type.equals("recommend")) {
+            sectionHeaderHolder.tvHeadLadder.setVisibility(View.VISIBLE);
+            sectionHeaderHolder.tvHeadMore.setVisibility(View.GONE);
+        } else {
+            sectionHeaderHolder.tvHeadLadder.setVisibility(View.GONE);
+            sectionHeaderHolder.tvHeadMore.setVisibility(View.VISIBLE);
+        }
+    }
+
+    private void onBindStandardCardHolder(RecyclerView.ViewHolder holder, int position) {
+        final Recommends.Body body = dataList.get(position - 1).body;
+        StandardCardHolder standardCardHolder = (StandardCardHolder) holder;
+        standardCardHolder.ivCardPic.setImageURI(body.cover);
+        standardCardHolder.tvCardDesc.setText(body.title);
+        standardCardHolder.tvPlayCounts.setText(body.play);
+        standardCardHolder.tvCommentCounts.setText(body.danmaku);
+        standardCardHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, PortraitPlayerActivity.class);
+                intent.putExtra("aid", body.param);
+                mContext.startActivity(intent);
+            }
+        });
+    }
+
+    private void onBindLongCardHolder(RecyclerView.ViewHolder holder, int position) {
+        Recommends.Body body = dataList.get(position - 1).body;
+        LongCardHolder longCardHolder = (LongCardHolder) holder;
+        longCardHolder.ivCardPic.setImageURI(body.cover);
+        if (TextUtils.isEmpty(body.title)) {
+            longCardHolder.tvCardDesc.setVisibility(View.GONE);
+        } else {
+            longCardHolder.tvCardDesc.setVisibility(View.VISIBLE);
+            longCardHolder.tvCardDesc.setText(body.title);
         }
     }
 

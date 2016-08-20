@@ -1,7 +1,5 @@
 package com.vicning.android.bibilicopycat.network;
 
-import com.vicning.android.bibilicopycat.model.entity.JJInfos;
-
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

@@ -9,13 +9,13 @@ import java.util.List;
 public class Recommends {
 
     public Integer code;
-    public List<Result> result = new ArrayList<Result>();
+    public List<Result> result = new ArrayList<>();
 
     public static class Result {
 
         public String type;
         public Head head;
-        public List<Body> body = new ArrayList<Body>();
+        public List<Body> body = new ArrayList<>();
 
     }
 

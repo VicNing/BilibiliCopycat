@@ -3,7 +3,6 @@ package com.vicning.android.bibilicopycat.ui.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -20,11 +19,8 @@ import com.vicning.android.bibilicopycat.ui.adapters.RecommendPageAdapter;
 import com.vicning.android.bibilicopycat.ui.widgets.SpacesItemDecoration;
 import com.vicning.android.bibilicopycat.utils.DensityUtil;
 
-import java.util.HashMap;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;

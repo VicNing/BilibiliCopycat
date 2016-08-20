@@ -1,11 +1,9 @@
 package com.vicning.android.bibilicopycat.ui.widgets;
 
 import android.graphics.Rect;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.vicning.android.bibilicopycat.ui.adapters.RecommendPageAdapter;
 import com.vicning.android.bibilicopycat.ui.adapters.SearchCompreAdapter;
 
 /**
