@@ -10,6 +10,8 @@
     <color name="transGray">#99AAAAAA</color>
     <color name="colorTextGray">#FF797979</color>
     <color name="textBlack">#CC000000</color>
+    <color name="colorLightTransGray">#66BABABA</color>
+    <color name="colorYellow">#FFFFD11D</color>
     <!--Text Colors-->
     <color name="textWhite">#FFFFFF</color>
 

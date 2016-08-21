@@ -3,7 +3,6 @@ package com.vicning.android.bibilicopycat.ui.widgets;
 import android.graphics.Rect;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import com.vicning.android.bibilicopycat.ui.adapters.RecommendPageAdapter;
@@ -32,7 +31,7 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
                 break;
 
             case RecommendPageAdapter.TYPE_SECTION_HEADER:
-                outRect.set(mSpace, mSpace, mSpace, mSpace);
+                outRect.set(mSpace, 0, mSpace, mSpace);
                 break;
 
             case RecommendPageAdapter.TYPE_SECTION_FOOTER:
@@ -55,51 +54,4 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     }
 }
 
-        /*
-        *//*if (childAdapterPosition == 0) {
-            outRect.bottom = mSpace;
-        } else {
-            int temp = childAdapterPosition % 6;
-            switch (temp) {
-                case 1:
-                    if (childAdapterPosition == 1) {
-                        outRect.top = 0;
-                    }
-                    outRect.top = mSpace;
-                    outRect.left = mSpace;
-                    outRect.right = mSpace;
-                    outRect.bottom = mSpace;
-                    break;
-
-                case 2:
-                    outRect.left = mSpace;
-                    outRect.right = mSpace / 2;
-                    outRect.bottom = mSpace;
-                    break;
-
-                case 3:
-                    outRect.left = mSpace / 2;
-                    outRect.right = mSpace;
-                    outRect.bottom = mSpace;
-                    break;
-
-                case 4:
-                    outRect.left = mSpace;
-                    outRect.right = mSpace / 2;
-                    outRect.bottom = mSpace;
-                    break;
-
-                case 5:
-                    outRect.left = mSpace / 2;
-                    outRect.right = mSpace;
-                    outRect.bottom = mSpace;
-                    break;
-
-                case 0:
-                    outRect.top = mSpace;
-                    outRect.left = mSpace;
-                    outRect.right = mSpace;
-                    outRect.bottom = mSpace;
-                    break;
-            }*/
 

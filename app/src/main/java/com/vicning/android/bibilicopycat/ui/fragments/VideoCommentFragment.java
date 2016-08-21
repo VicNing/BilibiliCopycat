@@ -5,11 +5,9 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.model.entity.VideoComment;
@@ -97,13 +95,7 @@ public class VideoCommentFragment extends Fragment {
                             adapter.onDataReceived(videoComment);
                             adapter.notifyDataSetChanged();
                         } else {
-                            int replies = videoComment.data.replies.size();
-                            if (replies != 0) {
-                                adapter.getVideoComment()
-                                        .data.replies.addAll(videoComment.data.replies);
-                                adapter.notifyItemRangeInserted(
-                                        adapter.getItemCount(), replies);
-                            }
+                            adapter.onLoadMore(videoComment);
                         }
                     }
                 }, new Action1<Throwable>() {

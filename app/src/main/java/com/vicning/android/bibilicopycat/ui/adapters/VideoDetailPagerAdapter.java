@@ -5,11 +5,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.vicning.android.bibilicopycat.ui.fragments.TestFragment;
 import com.vicning.android.bibilicopycat.ui.fragments.VideoCommentFragment;
 import com.vicning.android.bibilicopycat.ui.fragments.VideoInfoFragment;
-
-import junit.framework.Test;
 
 /**
  * Created by Neil on 2016/8/14.

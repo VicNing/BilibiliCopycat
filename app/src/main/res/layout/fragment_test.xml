@@ -4,13 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
-        android:text="notChanged"
         android:id="@+id/tv_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-    <Button
-        android:id="@+id/bt_test"
-        android:text="push"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>

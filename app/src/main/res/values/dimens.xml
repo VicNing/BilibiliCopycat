@@ -3,4 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="toolbar_height">74dp</dimen>
+    <dimen name="round_corner_radius">2dp</dimen>
+    <dimen name="text_size_large">14sp</dimen>
+    <dimen name="text_size_normal">12sp</dimen>
+
 </resources>

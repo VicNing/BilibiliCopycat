@@ -7,10 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.vicning.android.bibilicopycat.R;
+
 import static com.vicning.android.bibilicopycat.utils.LogUtil.*;
 
 
@@ -49,13 +49,7 @@ public class TestFragment extends Fragment {
         logError(pageTitle, "onCreateView");
         View view = inflater.inflate(R.layout.fragment_test, container, false);
         final TextView tvTest = (TextView) view.findViewById(R.id.tv_test);
-        Button btTest = (Button) view.findViewById(R.id.bt_test);
-        btTest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                tvTest.setText("changed");
-            }
-        });
+        tvTest.setText(pageTitle);
         return view;
     }
 

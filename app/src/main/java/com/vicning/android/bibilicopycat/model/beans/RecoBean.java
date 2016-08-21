@@ -1,6 +1,8 @@
-package com.vicning.android.bibilicopycat.model.entity;
+package com.vicning.android.bibilicopycat.model.beans;
 
 import android.support.annotation.Nullable;
+
+import com.vicning.android.bibilicopycat.model.entity.Recommends;
 
 /**
  * Created by Neil on 2016/8/17.

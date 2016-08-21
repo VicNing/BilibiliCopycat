@@ -3,13 +3,14 @@ package com.vicning.android.bibilicopycat.ui.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.model.entity.Recommends;
 import com.vicning.android.bibilicopycat.network.AppServices;
@@ -18,11 +19,8 @@ import com.vicning.android.bibilicopycat.ui.adapters.RecommendPageAdapter;
 import com.vicning.android.bibilicopycat.ui.widgets.SpacesItemDecoration;
 import com.vicning.android.bibilicopycat.utils.DensityUtil;
 
-import java.util.HashMap;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
@@ -39,6 +37,7 @@ public class RecommendFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.e("STATE", "onCreateView: " );
         View view = inflater.inflate(R.layout.fragment_base, container, false);
         ButterKnife.bind(this, view);
         initView();
@@ -53,6 +52,17 @@ public class RecommendFragment extends Fragment {
 
     private void initView() {
 
+        //当RecyclerView滚动时，暂停加载图片
+        rvBase.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_IDLE) {
+                    Fresco.getImagePipeline().resume();
+                } else {
+                    Fresco.getImagePipeline().pause();
+                }
+            }
+        });
         recommendPageAdapter = new RecommendPageAdapter(getContext());
         rvBase.setAdapter(recommendPageAdapter);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);

@@ -1,17 +1,13 @@
 package com.vicning.android.bibilicopycat.ui.fragments;
 
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.common.Secret;
@@ -26,12 +22,9 @@ import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Action1;
 import rx.schedulers.Schedulers;
-
-import static com.vicning.android.bibilicopycat.utils.LogUtil.logError;
 
 /**
  * Created by Neil on 2016/8/14.

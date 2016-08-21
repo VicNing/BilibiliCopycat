@@ -23,8 +23,26 @@
         <item name="tabTextColor">@color/textBlack</item>
     </style>
 
+    <style name="SearchTabLayoutStyle" parent="Widget.Design.TabLayout">
+        <item name="tabSelectedTextColor">@color/colorPrimary</item>
+        <item name="tabTextColor">@color/textBlack</item>
+    </style>
+
     <style name="ToolbarTheme">
         <!-- android:textColorPrimary is the color of the title text in the Toolbar  -->
         <item name="android:textColorPrimary">@color/colorWhite</item>
     </style>
+
+    <style name="StyleSectionHeaderTextView">
+        <item name="android:paddingEnd">4dp</item>
+        <item name="android:paddingStart">4dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
 </resources>

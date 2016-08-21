@@ -1,6 +1,5 @@
 package com.vicning.android.bibilicopycat.ui.adapters;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -133,7 +132,13 @@ public class VideoCommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         }
     }
 
-    public VideoComment getVideoComment() {
-        return this.videoComment;
+    public void onLoadMore(VideoComment more) {
+        if (videoComment != null) {
+            int replies = more.data.replies.size();
+            if (replies != 0) {
+                videoComment.data.replies.addAll(more.data.replies);
+                notifyItemRangeInserted(getItemCount(), replies);
+            }
+        }
     }
 }

@@ -1,7 +1,6 @@
 package com.vicning.android.bibilicopycat.ui.fragments;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
@@ -11,15 +10,16 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.view.Display;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.vicning.android.bibilicopycat.R;
 import com.vicning.android.bibilicopycat.ui.SearchActivity;
@@ -30,7 +30,8 @@ import butterknife.ButterKnife;
 /**
  * Created by Neil on 2016/8/16.
  */
-public class SearchDialogFragment extends DialogFragment implements View.OnClickListener {
+public class SearchDialogFragment extends DialogFragment implements View.OnClickListener,
+        TextView.OnEditorActionListener {
 
     @BindView(R.id.ib_back)
     ImageButton ibBack;
@@ -55,6 +56,7 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
         ibBack.setOnClickListener(this);
         ibSearch.setOnClickListener(this);
         ibClear.setOnClickListener(this);
+        etSearch.setOnEditorActionListener(this);
         etSearch.requestFocus();
     }
 
@@ -101,11 +103,24 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
                 break;
 
             case R.id.ib_search:
-                Intent intent = new Intent(getContext(), SearchActivity.class);
-                intent.putExtra("search", etSearch.getText().toString());
-                startActivity(intent);
-                getDialog().dismiss();
+                performSearch();
                 break;
         }
+    }
+
+    @Override
+    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+            performSearch();
+            return true;
+        }
+        return false;
+    }
+
+    public void performSearch() {
+        Intent intent = new Intent(getContext(), SearchActivity.class);
+        intent.putExtra("search", etSearch.getText().toString());
+        startActivity(intent);
+        getDialog().dismiss();
     }
 }

@@ -1,6 +1,7 @@
 package com.vicning.android.bibilicopycat.network;
 
 
+import com.vicning.android.bibilicopycat.model.entity.SearchCompreInfo;
 import com.vicning.android.bibilicopycat.model.entity.VideoComment;
 import com.vicning.android.bibilicopycat.model.entity.VideoInfo;
 
@@ -25,5 +26,8 @@ public interface ApiServices {
 
     @GET("view")
     Observable<VideoInfo> getVideoInfo(@QueryMap Map<String, String> queryMap);
+
+    @GET("search")
+    Observable<SearchCompreInfo> getSearchCompreInfo(@QueryMap Map<String, String> queryMap);
 
 }
