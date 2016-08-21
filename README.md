@@ -23,7 +23,7 @@ This project is still under development, and have not had a stable release yet ~
 - Video controller adjustment.
 - Live video function implementation.
 
-##Librarys used in this project
+##Libraries used in this project
 - [okhttp3: 3.4.1](https://github.com/square/okhttp)
 - [retrofit2: 2.1.0](https://github.com/square/retrofit)
 - [rxjava: 1.1.8](https://github.com/ReactiveX/RxJava)
