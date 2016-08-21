@@ -1,5 +1,5 @@
 # BilibiliCopycat
-BilibiliCopycat is a replica of [Bilibili] (www.bilibili.com)'s Android App.
+BilibiliCopycat is a replica of [Bilibili] (http://www.bilibili.com)'s Android App.
 
 I start this porject mainly to improve my Anrdoid development skills in my free time, and have a better understanding of well-designed Bilibili Android App.
 
