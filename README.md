@@ -1,6 +1,17 @@
 # BilibiliCopycat
 A copycat of Bilibili Android client.
 
+##Project Progress
+- 推荐 page layout.
+- Search functionality.
+- Video playback with danmaku support.
+- Video playback info and comments layout.
+
+##TODO List with Priority
+- Bangumi detail page layout and data binding.
+- Navigation view layout.
+- Video controller adjustment.
+
 ##Librarys used in this project
 - [okhttp3: 3.4.1](https://github.com/square/okhttp)
 - [retrofit2: 2.1.0](https://github.com/square/retrofit)
@@ -12,13 +23,7 @@ A copycat of Bilibili Android client.
 - [ijkplayer: 0.6.0](https://github.com/Bilibili/ijkplayer)
 - [DanmakuFlameMaster: 0.4.9](https://github.com/Bilibili/DanmakuFlameMaster)
 
-##Project Progress
-- 推荐 page layout.
-- Search functionality.
-- Video playback with danmaku support.
-- Video playback info and comments layout.  
-
 ##Development Platform
 This project was originally developed on HTC ONE m7 Android 4.4.2.
 
-There could be some screen compatability and Android paltform issues if you run this project on your development devices. Due to personal reasons, it hard to fix these issues on my side alone. So, if any of you meet compatability issuses, don't hesitate to contact me, with your development Android platform and your devices' spec.
+There could be some screen compatability and Android paltform issues if you run this project on your development devices. Due to personal reasons, it hard to fix these issues on my side alone. So, if any of you meet compatability issuses, don't hesitate to contact me, with your Android platform and devices' spec.
