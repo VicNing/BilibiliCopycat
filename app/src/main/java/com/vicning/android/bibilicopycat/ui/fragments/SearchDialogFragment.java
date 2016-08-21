@@ -110,6 +110,7 @@ public class SearchDialogFragment extends DialogFragment implements View.OnClick
 
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+        //IME search: show search key on soft keyboard
         if (actionId == EditorInfo.IME_ACTION_SEARCH) {
             performSearch();
             return true;
