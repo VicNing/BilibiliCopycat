@@ -8,6 +8,7 @@ A copycat of Bilibili Android client.
 - Video playback info and comments layout.
 
 ##TODO List with Priority
+- Top 20 views online.
 - Bangumi detail page layout and data binding.
 - Navigation view layout.
 - Video controller adjustment.
