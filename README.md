@@ -1,6 +1,11 @@
 # BilibiliCopycat
 A copycat of Bilibili Android client.
 
+#Screen Shots
+<img src="screenshots/reco.png" width="250px" />
+<img src="screenshots/search.png" width="250px" />
+<img src="screenshots/player_page.png" width="250px" />
+
 ##Project Progress
 - 推荐 page layout.
 - Search functionality.
