@@ -1,13 +1,23 @@
 # BilibiliCopycat
-A copycat of Bilibili Android client.
+BilibiliCopycat is a replica of [Bilibili] (http://www.bilibili.com)'s Android App.
+
+I start this porject mainly to improve my Anrdoid development skills in my free time, and have a better understanding of well-designed Bilibili Android App.
+
+This project is still under development, and have not had a stable release yet ~~maybe never :(~~ .So, for bugs, questions and discussions please submit new issue, but I have no guarantee that I would fix it in time.
+
+##Screen Shots
+<img src="screenshots/reco.png" width="250px" />
+<img src="screenshots/search.png" width="250px" />
+<img src="screenshots/player_page.png" width="250px" />
 
 ##Project Progress
 - 推荐 page layout.
 - Search functionality.
-- Video playback with danmaku support.
+- Basic video playback with danmaku support.
 - Video playback info and comments layout.
 
 ##TODO List with Priority
+- Top 20 views online.
 - Bangumi detail page layout and data binding.
 - Navigation view layout.
 - Video controller adjustment.
