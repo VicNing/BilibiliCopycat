@@ -11,6 +11,7 @@ A copycat of Bilibili Android client.
 - Bangumi detail page layout and data binding.
 - Navigation view layout.
 - Video controller adjustment.
+- Live video function implementation.
 
 ##Librarys used in this project
 - [okhttp3: 3.4.1](https://github.com/square/okhttp)
