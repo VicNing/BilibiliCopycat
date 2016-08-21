@@ -1,7 +1,7 @@
 # BilibiliCopycat
 BilibiliCopycat is a replica of [Bilibili] (http://www.bilibili.com)'s Android App.
 
-I start this porject mainly to improve my Anrdoid development skills in my free time, and have a better understanding of well-designed Bilibili Android App.
+I start this project mainly to improve my Android development skills in my free time, and have a better understanding of well-designed Bilibili Android App.
 
 This project is still under development, and have not had a stable release yet ~~maybe never :(~~ .So, for bugs, questions and discussions please submit new issue, but I have no guarantee that I would fix it in time.
 
