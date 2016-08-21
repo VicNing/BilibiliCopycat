@@ -4,7 +4,7 @@ A copycat of Bilibili Android client.
 ##Project Progress
 - 推荐 page layout.
 - Search functionality.
-- Video playback with danmaku support.
+- Basic video playback with danmaku support.
 - Video playback info and comments layout.
 
 ##TODO List with Priority
