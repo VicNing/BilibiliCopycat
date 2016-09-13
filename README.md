@@ -1,5 +1,5 @@
 # BilibiliCopycat
-BilibiliCopycat是 [Bilibili] (http://www.bilibili.com)的安卓仿制客户端。
+BilibiliCopycat是 [Bilibili] (http://www.bilibili.com)的安卓仿制客户端。[README English ver](https://github.com/VicNing/BilibiliCopycat/blob/master/READMEENG.md)
 
 此项目是为了用来在业余时间学习理解Bilibili安卓客户端的优秀设计，加强自身的开发能力。
 
