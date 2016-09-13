@@ -228,7 +228,12 @@ public class RecommendPageAdapter extends RecyclerView.Adapter<RecyclerView.View
         dataList = new ArrayList<>();
 
         for (Recommends.Result result : data.result) {
-            String type = result.type;
+            String type;
+            if (result.type == null) {
+                type = "weblink";
+            } else {
+                type = result.type;
+            }
             dataList.add(new RecoBean(type, TYPE_SECTION_HEADER, result.head, null));
             for (Recommends.Body body : result.body) {
                 if (type.equals("weblink") || type.equals("activity")) {
