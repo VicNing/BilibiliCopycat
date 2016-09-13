@@ -1,29 +1,29 @@
 # BilibiliCopycat
-BilibiliCopycat is a replica of [Bilibili] (http://www.bilibili.com)'s Android App.
+BilibiliCopycat是 [Bilibili] (http://www.bilibili.com)的安卓仿制客户端。
 
-I start this project mainly to improve my Android development skills in my free time, and have a better understanding of well-designed Bilibili Android App.
+此项目是为了用来在业余时间学习理解Bilibili安卓客户端的优秀设计，加强自身的开发能力。
 
-This project is still under development, and have not had a stable release yet ~~maybe never :(~~ .So, for bugs, questions and discussions please submit new issue, but I have no guarantee that I would fix it in time.
+项目仍然处于早期开发中，因此难免会遇到各种各样的BUG。欢迎通过Issues提交你遇到的问题，但是因为种种原因我无法保证第一时间修复BUG。
 
-##Screen Shots
+##截图
 <img src="screenshots/reco.png" width="250px" />
 <img src="screenshots/search.png" width="250px" />
 <img src="screenshots/player_page.png" width="250px" />
 
-##Project Progress
-- 推荐 page layout.
-- Search functionality.
-- Basic video playback with danmaku support.
-- Video playback info and comments layout.
+##项目进度
+- 推荐页布局。
+- 基础的搜索功能。
+- 基础的视频和弹幕播放功能。
+- 视频信息和评论页布局。
 
-##TODO List with Priority
-- Top 20 views online.
-- Bangumi detail page layout and data binding.
-- Navigation view layout.
-- Video controller adjustment.
-- Live video function implementation.
+##项目计划
+- 当前在线观看人数最多的20个视频。
+- 番剧页面的布局和数据加载。
+- 导航栏的布局。
+- 视频操作按钮的调整。
+- 直播功能的实现。
 
-##Libraries used in this project
+##项目中使用的第三方类库
 - [okhttp3: 3.4.1](https://github.com/square/okhttp)
 - [retrofit2: 2.1.0](https://github.com/square/retrofit)
 - [rxjava: 1.1.8](https://github.com/ReactiveX/RxJava)
@@ -34,7 +34,9 @@ This project is still under development, and have not had a stable release yet ~
 - [ijkplayer: 0.6.0](https://github.com/Bilibili/ijkplayer)
 - [DanmakuFlameMaster: 0.4.9](https://github.com/Bilibili/DanmakuFlameMaster)
 
-##Development Platform
-This project was originally developed on HTC ONE m7 Android 4.4.2.
+##开发平台
+BilibiliCopycat是在HTC ONE m7 Android 4.4.2上进行测试和开发的。
 
-There could be some screen compatability and Android paltform issues if you run this project on your development devices. Due to personal reasons, it hard to fix these issues on my side alone. So, if any of you meet compatability issuses, don't hesitate to contact me, with your Android platform and devices' spec.
+如果你遇到了屏幕适配或者Android platform API的适配问题，请在Issues中带上测试机和测试版本的详细信息。
+
+
